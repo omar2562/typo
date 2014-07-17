@@ -23,9 +23,7 @@ Feature: Write Articles
   	When I fill in "Name" with "Arequipa"
   	And I fill in "Keywords" with "ciudad,peru,ciudad, blanca, patrimonio"
   	And I fill in "Description" with "Ciudad ubicada al Sur del Peru, conocida como la Ciudad Blanca, patrimonio cultural de la Humanidad"
-  	And I press "Save"
-  	Then I should be on the admin content page
-    When I go to the home page
-    Then I should see "Arequipa" in the "category" list
-    When I follow "Arequipa"
-    Then I should see an article with "Arequipa" category
+  	And I press "Save"  	
+  	Then I should be on the category page
+    And I should see "Arequipa"
+    Then show me the page    
