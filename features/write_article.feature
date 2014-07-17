@@ -17,3 +17,15 @@ Feature: Write Articles
     Then I should see "Foobar"
     When I follow "Foobar"
     Then I should see "Lorem Ipsum"
+    
+  Scenario: Successfully create categories
+  	Given I am on the category page
+  	When I fill in "Name" with "Arequipa"
+  	And I fill in "Keywords" with "ciudad,peru,ciudad, blanca, patrimonio"
+  	And I fill in "Description" with "Ciudad ubicada al Sur del Peru, conocida como la Ciudad Blanca, patrimonio cultural de la Humanidad"
+  	And I press "Save"
+  	Then I should be on the admin content page
+    When I go to the home page
+    Then I should see "Arequipa" in the "category" list
+    When I follow "Arequipa"
+    Then I should see an article with "Arequipa" category
